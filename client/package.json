@@ -2,8 +2,8 @@
   "name": "eth-marketplace",
   "version": "0.1.0",
   "private": true,
-  "description": "Project SADG 2020",
-  "author": "SADG University",
+  "description": "Project Blockchain 2022",
+  "author": "Arun Balaji R",
   "dependencies": {
     "@testing-library/jest-dom": "github:testing-library/jest-dom",
     "@testing-library/react": "^12.1.2",

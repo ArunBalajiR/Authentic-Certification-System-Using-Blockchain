@@ -7,6 +7,7 @@ import Certification from '../abis/Certification.json';
 import Web3 from 'web3';
 
 import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 import HashLoader from "react-spinners/HashLoader";
@@ -101,9 +102,9 @@ submitcall = e => {
                           <div className="border-b-2 border-indigo-500">    
                               <div className="m-5 justify-center item-center flex flex-row">
                                   <div className="w-26">
-                                    <img className="w-1/7 h-16 ml-4" src="/static/media/logo.38240f3b.svg" alt="Logo"/>
+                                    <img className="w-1/7 h-16 ml-4" src="client\src\assests\logo.png" alt="Logo"/>
                                   </div>
-                                  <div className="flex flex-col w-full"><span className="flex-1 text-2xl xl:text-3xl font-extrabold text-center">SADG University</span>
+                                  <div className="flex flex-col w-full"><span className="flex-1 text-2xl xl:text-3xl font-extrabold text-center">Anna University</span>
                                     <span className="flex-1 text-1xl xl:text-1xl text-center">Blockchain Certificate Authentication System</span>
                                   </div>
                                   </div>
@@ -162,8 +163,8 @@ submitcall = e => {
                             <thead>
                               <tr className="text-center">
                                 <th className="px-4 py-2">Semester</th>
-                                <th className="px-4 py-2">Total SGPA</th>
-                                <th className="px-4 py-2">Obtained SGPA</th>
+                                <th className="px-4 py-2">Total GPA</th>
+                                <th className="px-4 py-2">Obtained GPA</th>
                               </tr>
                             </thead>
                             <tbody className="text-center">
@@ -478,7 +479,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0'
                                 type="number"
-                                placeholder='Semester 1 SGPA'
+                                placeholder='Semester 1 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem1'
                                 min='5'
@@ -491,7 +492,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 3 SGPA'
+                                placeholder='Semester 3 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem3'
                                 min='5'
@@ -504,7 +505,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 5 SGPA'
+                                placeholder='Semester 5 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem5'
                                 min='5'
@@ -517,7 +518,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 7 SGPA'
+                                placeholder='Semester 7 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem7'
                                 min='5'
@@ -532,7 +533,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0'
                                 type="number"
-                                placeholder='Semester 2 SGPA'
+                                placeholder='Semester 2 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem2'
                                 min='5'
@@ -545,7 +546,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 4 SGPA'
+                                placeholder='Semester 4 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem4'
                                 min='5'
@@ -558,7 +559,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 6 SGPA'
+                                placeholder='Semester 6 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem6'
                                 min='5'
@@ -571,7 +572,7 @@ render() {
                               <input
                                 className='w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-3'
                                 type="number"
-                                placeholder='Semester 8 SGPA'
+                                placeholder='Semester 8 GPA'
                                 onChange={this.handleInputChange}
                                 name='sem8'
                                 min='5'

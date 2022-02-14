@@ -142,9 +142,9 @@ handleSubmit = e => {
                     <div className="border-b-2 border-indigo-500">
                         <div className="m-5 justify-center item-center flex flex-row">
                             <div className="w-26">
-                              <img className="w-1/7 h-16 ml-4" src="/static/media/logo.38240f3b.svg" alt="Logo"/>
+                              <img className="w-1/7 h-16 ml-4" src="client\src\assests\logo.svg" alt="Logo"/>
                             </div>
-                            <div className="flex flex-col w-full"><span className="flex-1 text-2xl xl:text-3xl font-extrabold text-center">SADG University</span>
+                            <div className="flex flex-col w-full"><span className="flex-1 text-2xl xl:text-3xl font-extrabold text-center">Anna University</span>
                               <span className="flex-1 text-1xl xl:text-1xl text-center">Blockchain Certificate Authentication System</span>
                             </div>
                             </div>

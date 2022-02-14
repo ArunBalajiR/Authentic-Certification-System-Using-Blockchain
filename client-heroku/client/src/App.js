@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import loginSADG from '../src/assests/loginSADG.svg';
+import loginANNA from '../src/assests/login-ANNA.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { Component } from 'react';
@@ -87,13 +87,13 @@ class App extends Component {
         <div className='flex-1 bg-indigo-100 text-center hidden lg:flex'>
           <div
             className='m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat'
-            style={{ backgroundImage: `url(${loginSADG})` }}
+            style={{ backgroundImage: `url(${loginANNA})` }}
           ></div>
           </div>
         </div>
       </div>
       <footer class='w-full text-center bg-gray-100 text-indigo-700 mt-4 pin-b'>
-            Copyright © 2020 by SADG University. All Rights Reserved.
+            Copyright © 2022 by Anna University. All Rights Reserved.
         </footer>
   </div>
     )

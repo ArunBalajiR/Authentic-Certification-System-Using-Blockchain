@@ -123,7 +123,7 @@ class Private extends Component {
         </div>
       </div>
       <footer class='w-full text-center bg-gray-100 text-indigo-700 p-4 pin-b'>
-            Copyright © 2020 by SADG University. All Rights Reserved.
+            Copyright © 2022 by Anna University. All Rights Reserved.
         </footer>
     </div>
     )

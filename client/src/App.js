@@ -17,7 +17,7 @@ import Logo from './assests/logo.svg';
         <div className='lg:w-1/2 xl:w-6/12 p-6 sm:p-12'>
           <div className='mt-12 flex flex-col items-center'>
             <h1 className='text-2xl xl:text-2xl font-extrabold  text-center '>
-              Welcome to SADG University{' '}
+              Welcome to Anna University{' '}
             </h1>
             <h2>
               Blockchain Certificate Authentication System

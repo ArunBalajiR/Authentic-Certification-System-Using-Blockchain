@@ -71,7 +71,7 @@ app.post('/api/smail', (req, res, next) => {
     const emailData = {
         to: email,
         from: process.env.EMAIL_FROM_OUTLOOK,
-        fromname: 'SADG University',
+        fromname: 'Anna University',
         subject: 'Graduation Certificate',
         html: `
                 <h1>Greetings from KLN COLLEGE OF ENGINEERING</h1>
