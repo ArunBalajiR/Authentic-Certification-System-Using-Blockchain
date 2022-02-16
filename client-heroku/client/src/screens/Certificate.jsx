@@ -189,8 +189,8 @@ handleSubmit = e => {
                         <thead>
                           <tr>
                             <th className="px-4 py-2">Semester</th>
-                            <th className="px-4 py-2">Total SGPA</th>
-                            <th className="px-4 py-2">Obtained SGPA</th>
+                            <th className="px-4 py-2">Total GPA</th>
+                            <th className="px-4 py-2">Obtained GPA</th>
                           </tr>
                         </thead>
                         <tbody className="text-center">

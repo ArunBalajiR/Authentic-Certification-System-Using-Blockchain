@@ -14,8 +14,8 @@ require('dotenv').config({
 
 //Connect to Database
 const uri = process.env.MONGO_URI
-mongoose.connect(uri, {
-    useNewUrlParser: true,
+mongoose.connect(uri, { 
+    useNewUrlParser: true, 
     useCreateIndex: true,
     useUnifiedTopology: true
     }
@@ -31,11 +31,15 @@ connection.once('open', () => {
 app.use(bodyparser.json())
 
 //config for only development
-//config for only development
+if(process.env.NODE_ENV === 'development') {
+  app.use(cors({
+      origin: process.env.CLIENT_URL
+  }))
+
+  app.use(morgan('dev'))
+}
 
 
-    //Morgan give information about each request
-    //Cors it's allow to deal with react for localhost at port 3000 without any problem
 app.post('/api/idfetch', (req, res, next) => {
   const usn = req.body.id
   //console.log(usn)
@@ -66,7 +70,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(cors());
 }
 
-const PORT = process.env.PORT
+const PORT = 5000
 
 var listener = app.listen(PORT, function() {
     console.log(`App listening on port ${PORT}`); //Listening on port 8888

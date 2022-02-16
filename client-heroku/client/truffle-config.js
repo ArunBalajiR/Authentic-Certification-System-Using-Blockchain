@@ -10,7 +10,7 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider(
           process.env.ROPSTEN_PRIVATE_KEY,
-          `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`
+          `https://ropsten.infura.io/v3/fec5665e22e141d08f6c1a332c97ee42`
         )
       },
       gasPrice: 21,

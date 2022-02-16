@@ -1,8 +1,16 @@
 /* eslint-disable no-lone-blocks */
 import React, { useState, useEffect, Component } from 'react';
+import QRCode from 'qrcode.react';
+import logoPNG from '../assests/logo.png';
+import annaPNG from '../assests/anna.png';
+import notfoundPNG from '../assests/notfound.png';
+import verifiedPNG from '../assests/verifiedd.png';
+import borderPNG from '../assests/borderr.png';
+
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
+import jsPDF from 'jspdf';
 import Certification from '../abis/Certification.json';
 import Web3 from 'web3';
 
@@ -101,6 +109,12 @@ async loadData(){
   const id = this.state.usn
   const tixd = await axios.post(`${process.env.REACT_APP_API_URL}/idfetch`, { id })
   this.setState({txid:tixd.data.tid})
+  //fetching certificate id from mongo
+  this.setState({certID:tixd.data.cert_id})
+  
+  
+  
+
 }
 
 async transactionX () {
@@ -120,12 +134,24 @@ async transactionX () {
   this.setState({newcert:certget})
 }
 
+generatePDF = () => {
+  const doc = new jsPDF({ compress: true });
+  doc.setDisplayMode(1);        
+  doc.html(document.querySelector("#pdf"), {
+    callback: function (doc) {
+      doc.save("certificate.pdf");
+    },
+    x: 25,
+    y: 2,
+    html2canvas: { scale: 0.25 },
+  });
+}
 handleSubmit = e => {
     e.preventDefault();
 
     //Fetching transaction details
     // console.log(this.state.newcert)
-    if(this.state.newcert.status == true && this.state.newcert.transactionHash == this.state.txid ) {
+    if(this.state.newcert.status === true && this.state.newcert.transactionHash === this.state.txid ) {
         //toast.success("Authentication Successfull!!")
         toast.success("Certificate is present in Blockchain")
         toast.info("Ropsten Blocknumber : "+this.state.newcert.blockNumber)
@@ -135,6 +161,9 @@ handleSubmit = e => {
         this.setState({verifyt:'Verified'})
         this.setState({dvisi:'visible'})
         this.setState({blockurl:`https://ropsten.etherscan.io/block/${this.state.newcert.blockNumber}`})
+        this.setState({transurl:'ropstenurl'})
+        
+        
     }
     else{
       toast.error("Failed to Authenticate Certificate");
@@ -150,13 +179,13 @@ handleSubmit = e => {
           return (
             <div className='min-h-full bg-gray-100 text-gray-900 md:flex justify-center'>
               <ToastContainer />
-              <div className='max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-col flex-1'>
+              <div className='max-w-screen-xl m-0 sm:m-5 bg-white shadow sm:rounded-lg flex flex-col flex-1' id="pdf">
                     <div className="border-b-2 border-indigo-500">    
                         <div className="m-5 justify-center item-center flex flex-row">
                             <div className="w-38">
-                              <img className="w-1/7 h-16 ml-4" src="https://i.ibb.co/M9TD04P/logo.png" alt="Logo"/>
+                              <img className="w-1/7 h-16 ml-4" src={logoPNG} alt="Logo"/>
                             </div>
-                            <div className="flex flex-col w-full"><img className="flex-1 text-2xl xl:text-3xl font-extrabold text-center" alt="headuni" src="https://i.ibb.co/0QSzV1R/anna.png" />
+                            <div className="flex flex-col w-full"><img className="flex-1 text-2xl xl:text-3xl font-extrabold text-center" alt="headuni" src={annaPNG} />
                               <span className="flex-1 text-1xl xl:text-1xl text-center">Blockchain Certificate Authentication System</span>
                             </div>
                             </div>
@@ -195,14 +224,16 @@ handleSubmit = e => {
                         </div>  
                       </div>
                     </div>
+                   
+
 
                     <div className="max-w-screen mx-16">
                       <table className="table-fixed w-full">
                         <thead>
                           <tr>
                             <th className="px-4 py-2">Semester</th>
-                            <th className="px-4 py-2">Total SGPA</th>
-                            <th className="px-4 py-2">Obtained SGPA</th>
+                            <th className="px-4 py-2">Total GPA</th>
+                            <th className="px-4 py-2">Obtained GPA</th>
                           </tr>
                         </thead>
                         <tbody className="text-center">
@@ -255,6 +286,36 @@ handleSubmit = e => {
                           <div className="border-r border-b px-4 py-1 col-span-1 text-center">{this.state.rank}</div>
                       </div>
                     </div>
+                    <span className="flex-1 py-4 text-1xl xl:text-1xl text-center">Cerrtificate ID : {this.state.certID}</span>
+                   
+                    <div className="md:flex max-w-full my-4">
+                    
+                      <div className="flex flex-col px-4 w-full justify-center items-center text-sm">
+                        <div className="flex flex-1 w-full my-1">
+                          <div className="flex-1 mx-8">
+                            <QRCode value={"https://ropsten.etherscan.io/tx/"+this.state.txid}/>
+                          </div>
+                          <div className="flex-1">
+                          <div className="flex-1">
+                            <img alt="verified" src={verifiedPNG} height />
+                          </div>
+                          </div>
+                        </div>
+                        
+                        <div className="flex flex-1 w-full my-1">
+                          <div className="flex-1 mx-8">
+                            <span>
+                              <div>Scan to see the&nbsp;&nbsp;&nbsp;</div>
+                              <div>block on explorer</div>
+                            </span>
+                          </div>
+                          <div className="flex-1">
+                          <div>Verify Authenticity at&nbsp;&nbsp;&nbsp;</div>
+                              <div><strong>www.dcertverify.com</strong></div>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
                     
                     <div className="max-w-full my-4 text-center mb-4">
                         <span className="font-light py-2">Certifies that</span>
@@ -276,17 +337,28 @@ handleSubmit = e => {
               </div>
             </div>      
 
-              <div className='m-0 bg-white shadow flex flex-col justify-center flex-1'>
+              <div className='m-0 bg-white shadow flex-col justify-center flex-1'>
                 <div className='lg p-6 sm:p-12'>
                   <div className='mt-0 flex flex-col items-center'>
-                  <h1 className='text-2xl xl:text-3xl font-extrabold text-center'>
+                  <h1 className='pt-20 text-2xl xl:text-3xl font-extrabold text-center'>
                             Verify Authenticity of Certificate in Blockchain Network
                         </h1>
-
+                        <div className='w-full flex-1 mt-8 text-indigo-500'>
+                        <div className='mx-auto max-w-xs relative'> 
+                        <button
+                          onClick={this.generatePDF}
+                          className='mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
+                        >
+                          <i className='far fa-download fa 1x w-6  -ml-2' />
+                          <span className='ml-2'>Download Certificate</span>
+                        </button>
+                      </div>
+                        </div>
                     <form
                       className='w-full flex-1 mt-8 text-indigo-500'
                       onSubmit={this.handleSubmit}
-                    >
+                    >  
+                      
                       <div className='mx-auto max-w-xs relative'> 
                         <button
                           type='submit'
@@ -302,9 +374,10 @@ handleSubmit = e => {
                       <button
                           className='mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
                         >
-                        <a href={this.state.blockurl} target="_blank">View Block</a>
+                        <a href={this.state.blockurl} target="_blank" rel="noreferrer">View Block</a>
                         </button>
                       </div>
+                      
                       <div className='my-12 border-b text-center'>
                         <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
                           Go To Home
@@ -328,32 +401,35 @@ handleSubmit = e => {
             </div>  
         )
       }
-      else if(this.state.usn == '') {
+      else if(this.state.usn === '') {
        return(
         <div>
            <div className='h-screen bg-gray-100 text-gray-900 md:flex justify-center'>
-           <div className='w-screen m-0 sm:m-20 bg-white shadow sm:rounded-lg flex flex-col flex-1'>
-          <div className='justify-center text-center m-10 p-10 flex-1'>
-            <div className='mt-16'>
-              <div>
-                <h1>Certificate Doesn't exist!!</h1>
-                <h1>Please check your Certificate ID</h1>
-              </div>            
-            </div>
-          </div>
-          <div className='flex flex-col items-center m-10 p-10 flex-1'>
-                        <a
-                          className='w-full max-w-xs font-bold shadow-sm rounded-lg py-3
-                  bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5'
+              <div className='w-screen m-0 sm:m-10 bg-white shadow sm:rounded-lg flex flex-col flex-2'>
+                <div className='flex flex-col items-center m-4 p-5 flex-1'>
+                  <img className='justify-center items-center' src={notfoundPNG} alt="404" />
+                </div>
+                <div className='justify-center text-center m-4 p-5 flex-1'>
+                  <div className='mt-8'>
+                    <div>
+                      <h1>Certificate Doesn't exist!!</h1>
+                      <h1>Please check your Certificate ID</h1>
+                    </div>            
+                  </div>
+                </div>
+                <div className='flex flex-col items-center m-4 p-5 flex-1'>
+                  <a className='w-full max-w-xs font-bold shadow-sm rounded-lg py-3
+                    bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5'
                           href='/private'
                           target='_self'
-                        >
-                          <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-indigo-500' />
-                          <span className='ml-2'>Back to Home</span>
-                        </a>
-                  </div>
+                  >
+                    <i className='fas fa-sign-in-alt fa 1x w-6  -ml-2 text-indigo-500' />
+                    <span className='ml-2'>Back to Home</span>
+                  </a>
+                </div>
               </div>
-              </div>
+            </div>
+            
         </div>
         )
       }

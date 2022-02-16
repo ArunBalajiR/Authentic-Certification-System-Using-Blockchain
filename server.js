@@ -65,8 +65,7 @@ app.use('/api', userRouter);
 //client-mail
 app.post('/api/smail', (req, res, next) => {
     
-    //console.log(req.body)
-    //console.log(req.body.z)
+    console.log(req.body)
     const email = req.body.z
     const emailData = {
         to: email,

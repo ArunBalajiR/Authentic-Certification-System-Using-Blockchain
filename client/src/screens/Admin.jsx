@@ -598,14 +598,36 @@ render() {
                       </div>
                       
                       <div className="py-4 m-2">
-                        <div className="mx-auto max-w-xs relative">
-                        <button
+                      <div class="flex mb-4">
+                      <div class="w-1/5 bg-gray-100 h-12"></div>
+                      <button
+                          onClick={() => {
+                            signout(() => {
+                              //  sessionStorage.reloadAfterPageLoad = true;
+                              //  window.location.reload();
+                              setTimeout(function(){
+                                toast.error('Signout Successfull');
+                              },250);
+
+                              this.props.history.push('/');
+                                
+                            });
+                          }}
+                          className='mt-3 tracking-wide font-semibold bg-pink-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
+                        >
+                          <i className='fas fa-sign-out-alt  w-6  -ml-2' />
+                          <span className='ml-3'>Signout and Exit</span>
+                        </button>
+                      
+                      <div class="w-1/5 bg-gray-100 h-12"></div>
+                      <button
                           type='submit'
                           className='mt-3 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
                         >
                           <span className='ml-3'>{textChange}</span>
                         </button>
-                        </div>
+                      <div class="w-1/5 bg-gray-100 h-12"></div>
+                    </div>
                         <div className='my-8 border-b text-center '>
                           <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-bold font-medium bg-white transform translate-y-1/2'>
                             Note
@@ -629,12 +651,12 @@ render() {
                         </div> */}
 
                     </div>
+                    
                       
                     <div className="mx-auto max-w-xs relative pb-8">
-                    <button
+                      <button
                           onClick={() => {
                             signout(() => {
-
                               //  sessionStorage.reloadAfterPageLoad = true;
                               //  window.location.reload();
                               setTimeout(function(){
@@ -645,11 +667,13 @@ render() {
                                 
                             });
                           }}
-                          className='mt-5 tracking-wide font-semibold bg-pink-500 text-gray-100 w-full py-4 rounded-lg hover:bg-pink-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
-                        ><i className='fas fa-sign-out-alt  w-6  -ml-2' />
-                          <span className='ml-3'>Signout</span>
-                        </button>
-                        </div>
+                          className='mt-5 tracking-wide font-semibold bg-blue-500 text-gray-100 w-full py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none'
+                        ><i className='fas fa-upload  w-6  -ml-2' />
+                          <span className='ml-3'>Upload Bulk Database</span>
+                          </button>
+                    </div>
+                    
+                    
 
                     </form>
                   </div>
