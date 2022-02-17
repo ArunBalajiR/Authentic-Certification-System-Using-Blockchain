@@ -5,7 +5,6 @@ import logoPNG from '../assests/logo.png';
 import annaPNG from '../assests/anna.png';
 import notfoundPNG from '../assests/notfound.png';
 import verifiedPNG from '../assests/verifiedd.png';
-import borderPNG from '../assests/borderr.png';
 
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
@@ -136,7 +135,7 @@ async transactionX () {
 
 generatePDF = () => {
   const doc = new jsPDF({ compress: true });
-  doc.setDisplayMode(1);        
+  doc.setDisplayMode(1);       
   doc.html(document.querySelector("#pdf"), {
     callback: function (doc) {
       doc.save("certificate.pdf");
@@ -286,7 +285,7 @@ handleSubmit = e => {
                           <div className="border-r border-b px-4 py-1 col-span-1 text-center">{this.state.rank}</div>
                       </div>
                     </div>
-                    <span className="flex-1 py-4 text-1xl xl:text-1xl text-center">Cerrtificate ID : {this.state.certID}</span>
+                    <span className="flex-1 py-4 text-1xl xl:text-1xl font-mono text-center">Cerrtificate ID : {this.state.certID}</span>
                    
                     <div className="md:flex max-w-full my-4">
                     
@@ -295,11 +294,13 @@ handleSubmit = e => {
                           <div className="flex-1 mx-8">
                             <QRCode value={"https://ropsten.etherscan.io/tx/"+this.state.txid}/>
                           </div>
-                          <div className="flex-1">
-                          <div className="flex-1">
+                          <div className="flex-1 mx-8">
+                            
+                          </div>
+                          <div className="flex-1 mx-8">
                             <img alt="verified" src={verifiedPNG} height />
                           </div>
-                          </div>
+                          
                         </div>
                         
                         <div className="flex flex-1 w-full my-1">
@@ -309,9 +310,12 @@ handleSubmit = e => {
                               <div>block on explorer</div>
                             </span>
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 mx-8">
+                            
+                          </div>
+                          <div className="flex-1 mx-8">
                           <div>Verify Authenticity at&nbsp;&nbsp;&nbsp;</div>
-                              <div><strong>www.dcertverify.com</strong></div>
+                              <div><a href="www.arunbalaji.tech"><strong>www.dcertverify.com</strong></a></div>
                           </div>
                         </div>  
                       </div>
@@ -321,7 +325,7 @@ handleSubmit = e => {
                         <span className="font-light py-2">Certifies that</span>
                         <h1 className="font-bold py-2">{this.state.name}</h1>
                         <span className="font-light py-2">has been duly admitted to the degree of</span> 
-                        <h1 className="font-bold py-2">BACHELOR OF ENGINEERING</h1>
+                        <h1 className="font-bold py-2">BACHELOR&nbsp;OF&nbsp;ENGINEERING</h1>
                         <span className="font-light py-2">in Department of</span>
                         <h1 className="font-bold py-2">{this.state.branch}</h1>
                         <span className="font-light py-2">for recognition of the fulfillment of requirements for the said degree.</span>
