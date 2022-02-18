@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import authSvg from '../assests/reset.svg';
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,6 +18,7 @@ const ResetPassword = ({match}) => {
             setFormData({...formData, token,})
         }
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
   const handleChange = text => e => {
     setFormData({ ...formData, [text]: e.target.value });

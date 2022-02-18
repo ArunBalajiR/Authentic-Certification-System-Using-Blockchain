@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import authSvg from '../assests/welcome.svg';
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,6 +26,7 @@ const Activate = ({ match }) => {
     }
 
     console.log(token, name);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [match.params]);
   const { name, token, show } = formData;
 

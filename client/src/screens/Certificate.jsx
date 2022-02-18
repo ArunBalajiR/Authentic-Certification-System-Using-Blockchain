@@ -1,4 +1,5 @@
 /* eslint-disable no-lone-blocks */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, Component } from 'react';
 import QRCode from 'qrcode.react';
 import logoPNG from '../assests/logo.png';
@@ -315,7 +316,7 @@ handleSubmit = e => {
                           </div>
                           <div className="flex-1 mx-8">
                           <div>Verify Authenticity at&nbsp;&nbsp;&nbsp;</div>
-                              <div><a href="www.arunbalaji.tech"><strong>www.dcertverify.com</strong></a></div>
+                              <div><a href="https://dcertverify.herokuapp.com/"><strong>decertverify.herokuapp.com</strong></a></div>
                           </div>
                         </div>  
                       </div>

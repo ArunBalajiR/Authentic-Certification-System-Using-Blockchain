@@ -15,7 +15,7 @@ module.exports = {
         )
       },
       network_id: 3,
-      gas: 4000000 
+      gasPrice: 21,
     },
     development: {
       host: "127.0.0.1",

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import authSvg from '../assests/login-ANNA.svg';
 import { ToastContainer, toast } from 'react-toastify';

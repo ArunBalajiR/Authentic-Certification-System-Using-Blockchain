@@ -232,14 +232,14 @@ app.post('/api/smail', (req, res, next) => {
                              </tr> 
                              <tr> 
                               <td align="center" style="padding:0;Margin:0;padding-top:20px;padding-bottom:20px"> 
-                               <!--[if mso]><a href="https://arunbalaji.tech" target="_blank" hidden>
-          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://arunbalaji.tech" 
+                               <!--[if mso]><a href="https://dcertverify.herokuapp.com/" target="_blank" hidden>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://dcertverify.herokuapp.com/" 
                         style="height:51px; v-text-anchor:middle; width:279px" arcsize="0%" strokecolor="#2f3f67" strokeweight="1px" fillcolor="#ffffff">
             <w:anchorlock></w:anchorlock>
             <center style='color:#2f3f67; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:16px; font-weight:400; line-height:16px;  mso-text-raise:1px'>Download your Certificate</center>
           </v:roundrect></a>
         <![endif]--> 
-                               <!--[if !mso]><!-- --><span class="msohide es-button-border es-button-border-3" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://arunbalaji.tech" class="es-button es-button-2" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 35px 15px 35px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Download your Certificate</a></span> 
+                               <!--[if !mso]><!-- --><span class="msohide es-button-border es-button-border-3" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://dcertverify.herokuapp.com/" class="es-button es-button-2" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 35px 15px 35px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Download your Certificate</a></span> 
                                <!--<![endif]--></td> 
                              </tr> 
                            </table></td> 
@@ -286,13 +286,13 @@ app.post('/api/smail', (req, res, next) => {
                              <tr> 
                               <td align="right" class="es-m-txt-c" style="padding:0;Margin:0"> 
                                <!--[if mso]><a href="https://arunbalaji.tech" target="_blank" hidden>
-          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://arunbalaji.tech" 
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://dcertverify.herokuapp.com/" 
                         style="height:51px; v-text-anchor:middle; width:121px" arcsize="0%" strokecolor="#2f3f67" strokeweight="1px" fillcolor="#ffffff">
             <w:anchorlock></w:anchorlock>
             <center style='color:#2f3f67; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:16px; font-weight:400; line-height:16px;  mso-text-raise:1px'>Share</center>
           </v:roundrect></a>
         <![endif]--> 
-                               <!--[if !mso]><!-- --><span class="es-button-border msohide es-button-border-5" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://arunbalaji.tech" class="es-button es-button-4" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 35px 15px 35px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Share</a></span> 
+                               <!--[if !mso]><!-- --><span class="es-button-border msohide es-button-border-5" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://dcertverify.herokuapp.com/" class="es-button es-button-4" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 35px 15px 35px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Share</a></span> 
                                <!--<![endif]--></td> 
                              </tr> 
                            </table></td> 
@@ -305,14 +305,14 @@ app.post('/api/smail', (req, res, next) => {
                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                              <tr> 
                               <td align="left" class="es-m-txt-c" style="padding:0;Margin:0"> 
-                               <!--[if mso]><a href="https://arunbalaji.tech" target="_blank" hidden>
-          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://arunbalaji.tech" 
+                               <!--[if mso]><a href="https://dcertverify.herokuapp.com/" target="_blank" hidden>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://dcertverify.herokuapp.com/" 
                         style="height:51px; v-text-anchor:middle; width:163px" arcsize="0%" strokecolor="#2f3f67" strokeweight="1px" fillcolor="#ffffff">
             <w:anchorlock></w:anchorlock>
             <center style='color:#2f3f67; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:16px; font-weight:400; line-height:16px;  mso-text-raise:1px'>Verify</center>
           </v:roundrect></a>
         <![endif]--> 
-                               <!--[if !mso]><!-- --><span class="es-button-border msohide es-button-border-5" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://arunbalaji.tech" class="es-button es-button-1" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 55px 15px 60px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Verify</a></span> 
+                               <!--[if !mso]><!-- --><span class="es-button-border msohide es-button-border-5" style="border-style:solid;border-color:#2F3F67;background:#FFFFFF;border-width:1px;display:inline-block;border-radius:0px;width:auto;mso-hide:all"><a href="https://dcertverify.herokuapp.com/" class="es-button es-button-1" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;color:#2F3F67;font-size:18px;border-style:solid;border-color:#FFFFFF;border-width:15px 55px 15px 60px;display:inline-block;background:#FFFFFF;border-radius:0px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center">Verify</a></span> 
                                <!--<![endif]--></td> 
                              </tr> 
                            </table></td> 
